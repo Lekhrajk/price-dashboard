@@ -2,6 +2,9 @@
 
 A modern, responsive pricing dashboard built with React that showcases plans, offers, and real-time countdown timers with an intuitive user interface.
 
+## Screenshots
+<img width="1440" height="811" alt="Screenshot 2025-08-11 at 7 54 16 PM" src="https://github.com/user-attachments/assets/4a39ca52-13f8-49aa-a06d-bafb4e896b84" />
+
 ## 🚀 Quick Start
 
 ```bash
