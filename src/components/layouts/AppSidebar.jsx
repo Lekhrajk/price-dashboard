@@ -56,7 +56,6 @@ const AppSidebar = ({ onToggle, isMobile }) => {
                                     <button
                                         onClick={() => {
                                             setActiveTab(item.slug);
-                                            // Close sidebar on mobile when item is clicked
                                             if (isMobile) {
                                                 onToggle();
                                             }
