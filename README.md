@@ -4,6 +4,8 @@ A modern, responsive pricing dashboard built with React that showcases plans, of
 
 ## Screenshots
 <img width="1440" height="811" alt="Screenshot 2025-08-11 at 7 54 16 PM" src="https://github.com/user-attachments/assets/4a39ca52-13f8-49aa-a06d-bafb4e896b84" />
+<img width="1440" height="814" alt="Screenshot 2025-08-11 at 8 00 18 PM" src="https://github.com/user-attachments/assets/f93b3c96-f7ee-4aea-8bad-46c572f1c7ec" />
+
 
 ## 🚀 Quick Start
 
