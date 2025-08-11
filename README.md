@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Price Dashboard - React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive pricing dashboard built with React that showcases plans, offers, and real-time countdown timers with an intuitive user interface.
 
-## Available Scripts
+## 🚀 Quick Start
 
-In the project directory, you can run:
+```bash
+# Install dependencies
+npm install
 
-### `npm start`
+# Start development server
+npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Build for production
+npm run build
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+```
+price-dashboard/
+├── src/
+│   ├── components/
+│   │   ├── cards/pricing/          # Pricing and offer cards
+│   │   ├── layouts/                # Main layout and sidebar
+│   │   ├── messages/               # Common message components
+│   │   └── skeleton/               # Loading state components
+│   ├── pages/pricing/              # Main pricing page
+│   ├── apis/                       # API integration layer
+│   ├── constants/                  # Static data and utilities
+│   └── utils/                      # Utility functions
+├── public/                         # Static assets
+└── tailwind.config.js             # Tailwind CSS configuration
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎯 Key Features
 
-### `npm run build`
+### **Responsive Design**
+- **Mobile-first approach** with floating sidebar overlay
+- **Auto-adaptive layout** that works on all screen sizes
+- **Smooth animations** and transitions for better UX
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Real-time Countdown Timers**
+- **Live countdown** for offer expiration times
+- **Color-coded urgency** (blue → orange → red with pulse)
+- **Smart formatting** (days, hours, minutes, seconds)
+- **CSP-compliant** implementation without security warnings
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Smart State Management**
+- **Local storage persistence** for selected plan preferences
+- **Responsive state handling** for sidebar visibility
+- **Loading states** with skeleton components
+- **Error handling** for API calls
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠 Technical Implementation
 
-### `npm run eject`
+### **State Management Strategy**
+```javascript
+// Local storage for user preferences
+const savedPlanId = localStorage.getItem('selectedPlanId');
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+// Responsive state for sidebar
+const [isMobile, setIsMobile] = useState(false);
+const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+// Loading states for better UX
+const [isLoading, setIsLoading] = useState(true);
+const [isOffersLoading, setIsOffersLoading] = useState(true);
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **useEffect Patterns**
+- **Screen size detection** with resize listeners
+- **Timer cleanup** to prevent memory leaks
+- **Body overflow control** for mobile overlays
+- **API data fetching** with proper error handling
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### **Data Persistence**
+- **Plan selection** saved to localStorage
+- **User preferences** persist across sessions
+- **Fallback handling** for missing saved data
 
-## Learn More
+### **Tailwind CSS Usage**
+- **Custom gradients** and animations
+- **Responsive breakpoints** (sm, md, lg, xl)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎨 UI/UX Highlights
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Component Architecture**
+- **Reusable card components** for pricing and offers
+- **Skeleton loaders** for smooth loading experience
+- **Responsive sidebar** with mobile overlay
+- **Interactive elements** with hover states
 
-### Code Splitting
+### **User Experience**
+- **Progressive loading** with skeleton screens
+- **Intuitive navigation** with visual feedback
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🔧 Development Features
 
-### Analyzing the Bundle Size
+### **Code Quality**
+- **ESLint** configuration for code consistency
+- **Component-based** architecture
+- **Prop validation** and error boundaries
+- **Clean code** practices with meaningful names
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## 📱 Responsive Behavior
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### **Mobile (< 768px)**
+- Sidebar hidden by default
+- Floating overlay on toggle
+- Hamburger menu button
+- Backdrop click to close
+- Auto-close on navigation
 
-### Advanced Configuration
+### **Desktop (≥ 768px)**
+- Sidebar always visible
+- Traditional layout
+- No hamburger button
+- Full-width content area
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🚀 Getting Started
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Clone the repository**
+2. **Install dependencies** with `npm install`
+3. **Start development** with `npm start`
+4. **Build for production** with `npm run build`
